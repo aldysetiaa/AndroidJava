@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Coordinate Example</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #target {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div id="target" onclick="getCoordinates(event)">Click</div>
+
+<script>
+        function getCoordinates(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            // Kirim koordinat ke kode Java di Android
+            window.AndroidFunction.sendCoordinates(x, y);
+        }
+    </script>
+</body>
+</html>
